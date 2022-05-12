@@ -35,36 +35,44 @@ class MainActivity : AppCompatActivity() {
 
 
         buttonSuma.setOnClickListener{
+            esperado.setBackgroundColor(Color.TRANSPARENT)
             operando.setText("+")
             operacion = "suma"
         }
         buttonResta.setOnClickListener{
+            esperado.setBackgroundColor(Color.TRANSPARENT)
             operando.setText("-")
             operacion = "resta"
         }
         buttonProducto.setOnClickListener {
+            esperado.setBackgroundColor(Color.TRANSPARENT)
             operando.setText("*")
             operacion = "producto"
         }
         buttonDivision.setOnClickListener {
+            esperado.setBackgroundColor(Color.TRANSPARENT)
             operando.setText("/")
             operacion = "division"
         }
         buttonRaiz.setOnClickListener {
+            esperado.setBackgroundColor(Color.TRANSPARENT)
             operando.setText("√")
             numero2.setText("")
             operacion = "sqrt"
         }
         buttonCuadrado.setOnClickListener {
+            esperado.setBackgroundColor(Color.TRANSPARENT)
             operando.setText("x²")
             numero2.setText("")
             operacion = "sq"
         }
         buttonMOD.setOnClickListener {
+            esperado.setBackgroundColor(Color.TRANSPARENT)
             operando.setText("MOD")
             operacion = "mod"
         }
         buttonDEL.setOnClickListener {
+            esperado.setBackgroundColor(Color.TRANSPARENT)
             numero1.setText("")
             numero2.setText("")
             esperado.setText("")
@@ -76,11 +84,10 @@ class MainActivity : AppCompatActivity() {
             when(operacion){
                 "suma" -> {
 
-                    if ()
                     var num2int = (numero2.getText().toString()).toDouble()
 
                     resultado.setText((num1int + num2int).toString())
-                    if (esperado.getText().toString() == resultado.getText().toString()){
+                    if (esperado.getText().toString().toDouble() == resultado.getText().toString().toDouble()){
                         esperado.setBackgroundColor(Color.GREEN)
                     } else{
                         esperado.setBackgroundColor(Color.RED)
@@ -89,18 +96,47 @@ class MainActivity : AppCompatActivity() {
                 "resta" -> {
                     var num2int = (numero2.getText().toString()).toDouble()
                     resultado.setText((num1int - num2int).toString())
+                    if (esperado.getText().toString().toDouble() == resultado.getText().toString().toDouble()){
+                        esperado.setBackgroundColor(Color.GREEN)
+                    } else{
+                        esperado.setBackgroundColor(Color.RED)
+                    }
                 }
                 "producto" ->
                 {
                     var num2int = (numero2.getText().toString()).toDouble()
                     resultado.setText((num1int * num2int).toString())
+                    if (esperado.getText().toString().toDouble() == resultado.getText().toString().toDouble()){
+                        esperado.setBackgroundColor(Color.GREEN)
+                    } else{
+                        esperado.setBackgroundColor(Color.RED)
+                    }
                 }
                 "division" -> {
                     var num2int = (numero2.getText().toString()).toDouble()
                     resultado.setText((num1int / num2int).toString())
+                    if (esperado.getText().toString().toDouble() == resultado.getText().toString().toDouble()){
+                        esperado.setBackgroundColor(Color.GREEN)
+                    } else{
+                        esperado.setBackgroundColor(Color.RED)
+                    }
                 }
-                "sq" -> resultado.setText((num1int * num1int).toString())
-                "sqrt" -> resultado.setText((sqrt(num1int)).toString())
+                "sq" -> {
+                    resultado.setText((num1int * num1int).toString())
+                    if (esperado.getText().toString().toDouble() == resultado.getText().toString().toDouble()){
+                        esperado.setBackgroundColor(Color.GREEN)
+                    } else{
+                        esperado.setBackgroundColor(Color.RED)
+                    }
+                }
+                "sqrt" -> {
+                    resultado.setText((sqrt(num1int)).toString())
+                    if (esperado.getText().toString().toDouble() == resultado.getText().toString().toDouble()){
+                        esperado.setBackgroundColor(Color.GREEN)
+                    } else{
+                        esperado.setBackgroundColor(Color.RED)
+                    }
+                }
             }
         }
 
